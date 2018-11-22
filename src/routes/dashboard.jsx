@@ -27,8 +27,8 @@ const dashboardRoutes = [
   },
   {
     path: "/agendamento",
-    sidebarName: "Agendamentos",
-    navbarName: "Agendamentos",
+    sidebarName: "Avaliar",
+    navbarName: "Avaliar",
     icon: "content_paste",
     component: TableList
   },

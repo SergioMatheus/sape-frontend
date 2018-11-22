@@ -9,6 +9,8 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 
+import Button from "components/CustomButtons/Button"
+
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -46,7 +48,7 @@ function TableList(props) {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="success">
-            <h4 className={classes.cardTitleWhite}>Confirmados</h4>
+            <h4 className={classes.cardTitleWhite}>Avaliar</h4>
             <p className={classes.cardCategoryWhite}>
               Seus agendamentos confirmados.
             </p>
@@ -54,15 +56,17 @@ function TableList(props) {
           <CardBody>
             <Table
               tableHeaderColor="success"
-              tableHead={["Data inicio", "Data fim", "Equipamento", "Status"]}
+              tableHead={["Aluno", "Nota"]}
               tableData={[
-                ["20/11/2018 - 7:15 ", "20/11/2018 - 9:50 ", "Projetor", "Encerrado"],
-                ["21/11/2018 - 7:15 ", "22/11/2018 - 9:50 ", "Projetor", "Encerrado"],
-                ["23/11/2018 - 7:15 ", "23/11/2018 - 9:50 ", "Projetor", "Encerrado"],
-                ["24/11/2018 - 7:15 ", "24/11/2018 - 9:50 ", "Projetor", "Em andamento"],
+                ["Adriano ", <select><option>1</option>
+                </select>],
+                ["Luiz", <input />],
+                ["Sergio", <input />],
+                ["Italo", <input />],
               ]}
             />
           </CardBody>
+          <Button color="success" >Adicionar</Button>
         </Card>
       </GridItem>
     </GridContainer>
