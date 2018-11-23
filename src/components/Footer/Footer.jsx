@@ -14,8 +14,8 @@ function Footer({ ...props }) {
         <p className={classes.left}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a href="https://www.github.com/linzera" className={classes.a}>
-              Sape
+            <a className={classes.a}>
+              AvaLiator
             </a>, feito com amor.
           </span>
         </p>

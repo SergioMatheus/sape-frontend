@@ -48,7 +48,7 @@ function TableList(props) {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="success">
-            <h4 className={classes.cardTitleWhite}>Equipe 1 </h4>
+            <h4 className={classes.cardTitleWhite}>Equipe 2</h4>
             <p className={classes.cardCategoryWhite}>
               Avaliação do seu Grupo.
             </p>
@@ -58,22 +58,26 @@ function TableList(props) {
               tableHeaderColor="success"
               tableHead={["Aluno", "Nota"]}
               tableData={[
-                ["Adriano ", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Cezar ", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Icaro", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Jessica", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Lucas", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
                 ["Luiz", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
-                ["Hugo", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
-                ["Italo", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
-                ["Eli", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
-                ["Ronaldo", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
-                ["Samuel", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
-                ["Matheus", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Rafael", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Saulo", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
+                ["Sérgio", <select><option>1</option><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option></select>],
               ]}
             />
           </CardBody>
-          <Button color="success" href="/equipe1">Adicionar</Button>
+          <Button color="success" href="/equipe2" onClick={alerta()}>Adicionar</Button>
         </Card>
       </GridItem>
     </GridContainer>
   );
+}
+
+function alerta() {
+  alert("Formulario Enviado");
 }
 
 export default withStyles(styles)(TableList);

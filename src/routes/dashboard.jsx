@@ -16,6 +16,9 @@ import Icons from "views/Icons/Icons.jsx";
 import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
+import Equipe2 from "../views/Equipe2/Equipe2";
+import Equipe3 from "../views/Equipe3/Equipe3";
+import Equipe4 from "../views/Equipe4/Equipe4";
 
 const dashboardRoutes = [
   {
@@ -26,11 +29,32 @@ const dashboardRoutes = [
     component: DashboardPage
   },
   {
-    path: "/agendamento",
-    sidebarName: "Avaliar",
-    navbarName: "Avaliar",
+    path: "/equipe1",
+    sidebarName: "Equipe1",
+    navbarName: "Equipe1",
     icon: "content_paste",
     component: TableList
+  },
+  {
+    path: "/equipe2",
+    sidebarName: "Equipe2",
+    navbarName: "Equipe2",
+    icon: "content_paste",
+    component: Equipe2
+  },
+  {
+    path: "/equipe3",
+    sidebarName: "Equipe3",
+    navbarName: "Equipe3",
+    icon: "content_paste",
+    component: Equipe3
+  },
+  {
+    path: "/equipe4",
+    sidebarName: "Equipe4",
+    navbarName: "Equipe4",
+    icon: "content_paste",
+    component: Equipe4
   },
   {
     path: "/user",
