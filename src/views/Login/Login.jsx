@@ -31,7 +31,7 @@ const styles = {
   }
 };
 
-class UserProfile extends React.Component {
+class Login extends React.Component {
 
   state = {
   }
@@ -87,4 +87,4 @@ class UserProfile extends React.Component {
 
 }
 
-export default withStyles(styles)(UserProfile);
+export default withStyles(styles)(Login);
