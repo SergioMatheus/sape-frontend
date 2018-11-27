@@ -19,21 +19,25 @@ import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboar
 import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
+
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
       if (prop.redirect)
-        return <Redirect from={prop.path} to={prop.to} key={key} />;
+      return <Redirect from={prop.path} to={prop.to} key={key} />;
+      if(this.loggedIn===true && prop.loggedIn)
       return <Route path={prop.path} component={prop.component} key={key} />;
     })}
   </Switch>
 );
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobileOpen: false
+      mobileOpen: false,
+      loggedIn:false
     };
     this.resizeFunction = this.resizeFunction.bind(this);
   }

@@ -33,7 +33,8 @@ const dashboardRoutes = [
     sidebarName: "Equipe1",
     navbarName: "Equipe1",
     icon: "content_paste",
-    component: TableList
+    component: TableList,
+    loggedIn: true
   },
   {
     path: "/equipe2",
