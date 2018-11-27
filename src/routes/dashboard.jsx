@@ -9,7 +9,7 @@ import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
+import Login from "views/Login/Login";
 import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
 import Icons from "views/Icons/Icons.jsx";
@@ -22,46 +22,52 @@ import Equipe4 from "../views/Equipe4/Equipe4";
 
 const dashboardRoutes = [
   {
+    path: "/login",
+    sidebarName: "Login",
+    navbarName: "Login",
+    icon: Person,
+    component: Login,
+    loggedIn: false
+  },
+  {
     path: "/dashboard",
     sidebarName: "Dashboard",
     navbarName: "Resumo",
     icon: Dashboard,
-    component: DashboardPage
+    component: DashboardPage,
+    loggedIn: true
   },
   {
     path: "/equipe1",
     sidebarName: "Equipe1",
     navbarName: "Equipe1",
     icon: "content_paste",
-    component: TableList
+    component: TableList,
+    loggedIn: true
   },
   {
     path: "/equipe2",
     sidebarName: "Equipe2",
     navbarName: "Equipe2",
     icon: "content_paste",
-    component: Equipe2
+    component: Equipe2,
+    loggedIn: true
   },
   {
     path: "/equipe3",
     sidebarName: "Equipe3",
     navbarName: "Equipe3",
     icon: "content_paste",
-    component: Equipe3
+    component: Equipe3,
+    loggedIn: true
   },
   {
     path: "/equipe4",
     sidebarName: "Equipe4",
     navbarName: "Equipe4",
     icon: "content_paste",
-    component: Equipe4
-  },
-  {
-    path: "/user",
-    sidebarName: "Perfil",
-    navbarName: "Perfil",
-    icon: Person,
-    component: UserProfile
+    component: Equipe4,
+    loggedIn: true
   },
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];

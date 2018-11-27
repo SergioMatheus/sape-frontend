@@ -31,10 +31,9 @@ const styles = {
   }
 };
 
-class UserProfile extends React.Component {
+class Login extends React.Component {
 
   state = {
-    userEmail: "italolino@gmail.com"
   }
 
   render() {
@@ -49,33 +48,35 @@ class UserProfile extends React.Component {
                 <h4 className={classes.cardTitleWhite}>Edite seu Perfil</h4>
                 <p className={classes.cardCategoryWhite}>Atualize seu perfil</p>
               </CardHeader>
+              <form action="https://httpbin.org/get">
               <CardBody>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={6}>
                     <CustomInput
-                      labelText="Email"
-                      id="email-address"
+                      labelText="Matrícula"
+                      id="matricula"
+                      name="matricula"
                       formControlProps={{
                         fullWidth: true
                       }}
-                      value={this.state.userEmail}
-                    />
+                      />
                   </GridItem>
                   <GridItem xs={12} sm={12} md={6}>
                     <CustomInput
-                      labelText="Senha"
-                      id="password"
+                      labelText="Nome"
+                      id="nome"
+                      name="nome"
                       formControlProps={{
                         fullWidth: true
                       }}
-                      secureText
-                    />
+                      />
                   </GridItem>
                 </GridContainer>
               </CardBody>
               <CardFooter>
-                <Button color="primary">Atualizar</Button>
+                <Button color="primary" type="submit">Atualizar</Button>
               </CardFooter>
+              </form>
             </Card>
           </GridItem>
         </GridContainer>
@@ -86,4 +87,4 @@ class UserProfile extends React.Component {
 
 }
 
-export default withStyles(styles)(UserProfile);
+export default withStyles(styles)(Login);
