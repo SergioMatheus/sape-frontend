@@ -19,6 +19,7 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
 import Equipe2 from "../views/Equipe2/Equipe2";
 import Equipe3 from "../views/Equipe3/Equipe3";
 import Equipe4 from "../views/Equipe4/Equipe4";
+import Profile from "../views/Profile/Profile";
 
 const dashboardRoutes = [
   {
@@ -28,6 +29,14 @@ const dashboardRoutes = [
     icon: Person,
     component: Login,
     loggedIn: false
+  },
+  {
+    path: "/perfil",
+    sidebarName: "Perfil",
+    navbarName: "Perfil",
+    icon: Person,
+    component: Profile,
+    loggedIn: true
   },
   {
     path: "/dashboard",
