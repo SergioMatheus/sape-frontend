@@ -18,9 +18,12 @@ var server = [
   'Sign contract for "What are conference organizers afraid of?"'
 ];
 
+var server_url = "http://avaliacaogceep.herokuapp.com/"
+
 module.exports = {
   // these 3 are used to create the tasks lists in TasksCard - Dashboard view
   bugs,
   website,
-  server
+  server,
+  server_url
 };
