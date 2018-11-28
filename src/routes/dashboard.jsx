@@ -69,7 +69,8 @@ const dashboardRoutes = [
     component: Equipe4,
     loggedIn: true
   },
-  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect", loggedIn: true },
+  { redirect: true, path: "/", to: "/login", navbarName: "Redirect", loggedIn: false }
 ];
 
 export default dashboardRoutes;

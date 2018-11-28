@@ -11,6 +11,10 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import vars from "variables/general.jsx"
+
+var server_url = vars['server_url'];
+var loginApi = server_url + "/auth/login"
 
 const styles = {
   cardCategoryWhite: {
@@ -37,7 +41,6 @@ class Login extends React.Component {
   }
 
   render() {
-
     const { classes } = this.props;
     return (
       <div>
@@ -45,10 +48,10 @@ class Login extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <Card>
               <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Edite seu Perfil</h4>
-                <p className={classes.cardCategoryWhite}>Atualize seu perfil</p>
+                <h4 className={classes.cardTitleWhite}>Acesse sua conta</h4>
+                <p className={classes.cardCategoryWhite}>Utilize as credenciais da UCSAL</p>
               </CardHeader>
-              <form action="https://httpbin.org/get">
+              <form action={loginApi} method="post">
               <CardBody>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={6}>
@@ -63,9 +66,9 @@ class Login extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={6}>
                     <CustomInput
-                      labelText="Nome"
-                      id="nome"
-                      name="nome"
+                      labelText="Senha"
+                      id="senha"
+                      name="senha"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -74,7 +77,7 @@ class Login extends React.Component {
                 </GridContainer>
               </CardBody>
               <CardFooter>
-                <Button color="primary" type="submit">Atualizar</Button>
+                <Button color="primary" type="submit">Entrar</Button>
               </CardFooter>
               </form>
             </Card>
