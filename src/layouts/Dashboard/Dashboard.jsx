@@ -25,12 +25,16 @@ var routes;
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
-      if (prop.redirect)
-        return <Redirect from={prop.path} to={prop.to} key={key} />;
       if (loggedIn !== null && prop.loggedIn === true)
-        return <Route path={prop.path} component={prop.component} key={key} />;
-      else if (loggedIn !== null && prop.loggedIn === false)
-        return <Route path={prop.path} component={prop.component} key={key} />;
+        if (prop.redirect)
+          return <Redirect from={prop.path} to={prop.to} key={key} />;
+        else
+          return <Route path={prop.path} component={prop.component} key={key} />;
+      else if (loggedIn === null && prop.loggedIn === false)
+        if (prop.redirect)
+          return <Redirect from={prop.path} to={prop.to} key={key} />;
+        else
+          return <Route path={prop.path} component={prop.component} key={key} />;
     })}
   </Switch>
 );
