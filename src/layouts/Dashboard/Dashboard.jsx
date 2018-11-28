@@ -20,15 +20,16 @@ import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
 var loggedIn = true;
+var routes;
 
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
       if (prop.redirect)
         return <Redirect from={prop.path} to={prop.to} key={key} />;
-      if (loggedIn === true && prop.loggedIn === true)
+      if (loggedIn !== null && prop.loggedIn === true)
         return <Route path={prop.path} component={prop.component} key={key} />;
-        if (loggedIn === false && prop.loggedIn === false)
+      else if (loggedIn !== null && prop.loggedIn === false)
         return <Route path={prop.path} component={prop.component} key={key} />;
     })}
   </Switch>
@@ -40,6 +41,7 @@ class App extends React.Component {
     this.state = {
       mobileOpen: false,
     };
+    routes = dashboardRoutes.filter(prop => prop.loggedIn === (loggedIn !== null));
     this.resizeFunction = this.resizeFunction.bind(this);
   }
   handleDrawerToggle = () => {
@@ -75,7 +77,7 @@ class App extends React.Component {
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          routes={dashboardRoutes}
+          routes={routes}
           logoText={"AVALIATOR"}
           logo={logo}
           image={image}
